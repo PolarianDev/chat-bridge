@@ -26,8 +26,8 @@
 
     <licenses>
         <license>
-            <name>The Unlicense</name>
-            <url>https://unlicense.org</url>
+            <name>Zero Clause BSD License</name>
+            <url>https://opensource.org/license/0bsd/</url>
         </license>
     </licenses>
 
