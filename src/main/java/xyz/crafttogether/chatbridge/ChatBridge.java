@@ -2,7 +2,7 @@ package xyz.crafttogether.chatbridge;
 
 import dev.polarian.ircj.IrcClient;
 import dev.polarian.ircj.objects.Config;
-import net.dv8tion.jda.api.entities.TextChannel;
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginManager;
