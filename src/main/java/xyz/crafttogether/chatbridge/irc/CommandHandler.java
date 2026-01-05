@@ -1,6 +1,6 @@
 package xyz.crafttogether.chatbridge.irc;
 
-import dev.polarian.ircj.objects.events.PrivMessageEvent;
+import dev.polarian.ircj.objects.events.MessageEvent;
 
 import java.util.HashMap;
 
@@ -23,7 +23,7 @@ public class CommandHandler {
      * @param event The PrivMessageEvent object
      * @param prefix The prefix which invoked the method
      */
-    public static void parseCommand(PrivMessageEvent event, String prefix) {
+    public static void parseCommand(MessageEvent event, String prefix) {
         int separator = event.getMessage().indexOf(" ");
         IrcCommand command;
         if (separator == -1) {

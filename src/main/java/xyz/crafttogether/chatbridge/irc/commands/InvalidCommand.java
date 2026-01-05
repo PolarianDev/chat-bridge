@@ -1,6 +1,6 @@
 package xyz.crafttogether.chatbridge.irc.commands;
 
-import dev.polarian.ircj.objects.events.PrivMessageEvent;
+import dev.polarian.ircj.objects.events.MessageEvent;
 import xyz.crafttogether.chatbridge.irc.IrcCommand;
 
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.io.IOException;
  */
 public class InvalidCommand implements IrcCommand {
     @Override
-    public void invoke(PrivMessageEvent event) {
+    public void invoke(MessageEvent event) {
         try {
             event.sendMessage(event.getChannel(), "Invalid command");
         } catch (IOException e) {

@@ -1,6 +1,6 @@
 package xyz.crafttogether.chatbridge.irc.commands;
 
-import dev.polarian.ircj.objects.events.PrivMessageEvent;
+import dev.polarian.ircj.objects.events.MessageEvent;
 import xyz.crafttogether.chatbridge.irc.IrcCommand;
 
 /**
@@ -8,6 +8,6 @@ import xyz.crafttogether.chatbridge.irc.IrcCommand;
  */
 public class IrcOnlineCommand implements IrcCommand {
     @Override
-    public void invoke(PrivMessageEvent event) {
+    public void invoke(MessageEvent event) {
     }
 }

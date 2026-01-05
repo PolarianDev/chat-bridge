@@ -1,8 +1,8 @@
 package xyz.crafttogether.chatbridge.irc;
 
 import dev.polarian.ircj.DisconnectReason;
-import dev.polarian.ircj.EventListener;
-import dev.polarian.ircj.objects.events.PrivMessageEvent;
+import dev.polarian.ircj.EventAdapter;
+import dev.polarian.ircj.objects.events.MessageEvent;
 import dev.polarian.ircj.objects.events.WelcomeEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +15,7 @@ import xyz.crafttogether.craftcore.configuration.ConfigHandler;
 /**
  * Event listener which listens for IRC events provided by the IRCJ library
  */
-public class IrcEventSubscriber extends EventListener {
+public class IrcEventSubscriber extends EventAdapter {
     /**
      * SLF4J Logger object
      */
@@ -50,13 +50,13 @@ public class IrcEventSubscriber extends EventListener {
      * @param event The PrivMessageEvent object
      */
     @Override
-    public void onPrivMessageEvent(PrivMessageEvent event) {
+    public void onMessageEvent(MessageEvent event) {
         String prefix = ConfigHandler.getConfig().getIrcCommandPrefix();
         if (event.getMessage().startsWith(prefix)) {
             CommandHandler.parseCommand(event, prefix);
         }
-        MinecraftMessageSender.send(event.getNick(), event.getMessage(), MessageSource.IRC);
-        DiscordMessageSender.send(event.getNick(), event.getMessage(), null, MessageSource.IRC);
+        MinecraftMessageSender.send(event.getUser().getNick(), event.getMessage(), MessageSource.IRC);
+        DiscordMessageSender.send(event.getUser().getNick(), event.getMessage(), null, MessageSource.IRC);
     }
 
     /**
