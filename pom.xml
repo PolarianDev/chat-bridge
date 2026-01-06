@@ -6,7 +6,7 @@
 
     <groupId>xyz.crafttogether</groupId>
     <artifactId>chat-bridge</artifactId>
-    <version>1.3.2</version>
+    <version>1.3.3</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -109,7 +109,7 @@
         <dependency>
             <groupId>xyz.crafttogether</groupId>
             <artifactId>craftcore</artifactId>
-            <version>1.0-SNAPSHOT-12</version>
+            <version>1.0.15</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
